@@ -34,6 +34,11 @@ func AppTmplFunc(c *cli.Context) *templater.AppTemplate {
 				Name: ".env",
 			},
 			{
+				Tmpl: makeFileTmpl,
+				Dir:  filepath.Join(""),
+				Name: "Makefile",
+			},
+			{
 				Tmpl: usecaseTmpl,
 				Dir:  filepath.Join("src", "application", "usecase"),
 				Name: "user_usecase.go",

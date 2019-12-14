@@ -10,4 +10,5 @@ require (
 	github.com/subosito/gotenv v1.2.0 // indirect
 	github.com/urfave/cli v1.22.2
 	github.com/urfave/cli/v2 v2.0.0
+	golang.org/x/tools v0.0.0-20191213221258-04c2e8eff935
 )

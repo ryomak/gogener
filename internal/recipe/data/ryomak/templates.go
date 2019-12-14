@@ -295,3 +295,9 @@ func ReqIdMiddleware(next http.Handler) http.Handler {
 }
 
 `
+
+var makeFileTmpl = `
+run:
+	go run src/main.go
+
+`

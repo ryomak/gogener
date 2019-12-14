@@ -1,11 +1,14 @@
 package templater
 
 import (
+	"bytes"
+	"io/ioutil"
 	"os"
 	"path/filepath"
 	"text/template"
 
 	"github.com/iancoleman/strcase"
+	"golang.org/x/tools/imports"
 )
 
 type AppTemplate struct {
@@ -26,19 +29,22 @@ var toFuncs = template.FuncMap{
 }
 
 func (t *Templater) Create(curDir string, data interface{}) error {
+	dir := filepath.Join(curDir, t.Dir)
+	fullPath := filepath.Join(curDir, t.Dir, t.Name)
 	tmpl := template.Must(template.New(t.Name).Funcs(toFuncs).Parse(t.Tmpl))
-	if err := os.MkdirAll(filepath.Join(curDir, t.Dir), 0755); err != nil {
+
+	var buf bytes.Buffer
+	if err := tmpl.Execute(&buf, data); err != nil {
 		return err
 	}
-	f, err := os.Create(filepath.Join(curDir, t.Dir, t.Name))
+	fmtBuf, err := imports.Process(dir, buf.Bytes(), nil)
 	if err != nil {
+		fmtBuf = buf.Bytes()
+	}
+	if err := os.MkdirAll(dir, 0755); err != nil {
 		return err
 	}
-	defer f.Close()
-	if err := tmpl.Execute(f, data); err != nil {
-		return err
-	}
-	return nil
+	return ioutil.WriteFile(fullPath, fmtBuf, 0644)
 }
 
 /*
