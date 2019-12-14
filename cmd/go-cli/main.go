@@ -7,6 +7,6 @@ import (
 )
 
 func main() {
-	app := cmd.New("go-cki", "create app project", "1.0.0")
+	app := cmd.New("go-cli", "create app project", "1.0.0")
 	app.Run(os.Args)
 }
