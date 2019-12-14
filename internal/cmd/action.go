@@ -5,8 +5,8 @@ import (
 	"os"
 
 	"github.com/logrusorgru/aurora"
-	"github.com/ryomak/go-cli/internal/recipe"
-	"github.com/ryomak/go-cli/internal/templater"
+	"github.com/ryomak/go-app-cli/internal/recipe"
+	"github.com/ryomak/go-app-cli/internal/templater"
 	"github.com/urfave/cli/v2"
 )
 

@@ -1,21 +1,21 @@
-# go-cli
-go-cli is making project with template
+# go-app-cli
+go-app-cli is making project with template
 
 
 ## install
 
 ```
-$ go get -u github.com/ryomak/go-cli/cmd/go-cli
+$ GO111MODULE=on go get github.com/ryomak/go-app-cli/cmd/go-app-cli
 ```
 
 ## usage
 
 ```
 NAME:
-   go-cli create - create project
+   go-app-cli create - create project
 
 USAGE:
-   go-cli create command [command options] [arguments...]
+   go-app-cli create command [command options] [arguments...]
 
 COMMANDS:
    ryomak-app  create a ryomak-app template
@@ -29,7 +29,7 @@ OPTIONS:
 ## example
 
 ```
-$ go-cli create  -app example -mod github.com/ryomak/example ryomak-app
+$ go-app-cli create  -app example -mod github.com/ryomak/example ryomak-app
 ```
 
 ## WIP

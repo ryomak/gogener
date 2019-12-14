@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 
 	"github.com/logrusorgru/aurora"
-	"github.com/ryomak/go-cli/internal/templater"
+	"github.com/ryomak/go-app-cli/internal/templater"
 )
 
 type Recipe interface {

@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"github.com/ryomak/go-cli/internal/recipe/data/ryomak"
+	"github.com/ryomak/go-app-cli/internal/recipe/data/ryomak"
 	"github.com/urfave/cli/v2"
 )
 
