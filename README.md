@@ -1,11 +1,16 @@
 # go-app-cli
+[![Build Status](https://github/ryomak/go-app-cli/workflows/go/badge.svg)](https://github.com/ryomak/go-app-cli/actions?workflow=Test)
+[![Coverage Status](https://coveralls.io/repos/github/ryomak/go-app-cli/badge.svg?branch=master)](https://coveralls.io/github/ryomak/go-app-cli?branch=master)
+[![GoDoc](https://godoc.org/github.com/ryomak/go-app-cli?status.svg)](https://godoc.org/github.com/ryomak/go-app-cli)
+[![GoReport](https://goreportcard.com/badge/github.com/ryomak/go-app-cli)](https://goreportcard.com/report/github.com/ryomak/go-app-cli)
+
 go-app-cli is making project with template
 
 
 ## install
 
 ```
-$ GO111MODULE=on go get github.com/ryomak/go-app-cli/cmd/go-app-cli
+$ go get github.com/ryomak/go-app-cli/cmd/go-app-cli
 ```
 
 ## usage
