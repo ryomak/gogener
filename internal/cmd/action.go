@@ -34,10 +34,9 @@ func createApp(appTmplFunc func(c *cli.Context) *templater.AppTemplate) func(c *
 			ModName:    mod,
 		})
 		if ok := appRecipe.Do(appTmplFunc(c)); !ok {
-			fmt.Fprintf(out, "%s \n%s", aurora.Red("Create Faild"), aurora.Cyan(fmt.Sprint("created ", appName)))
+			fmt.Fprintf(out, "\n\n%s \n%s", aurora.Red("Create Faild"), aurora.Cyan(fmt.Sprint("created ", appName)))
 		}
-		fmt.Fprintf(out, "%s \n%s", aurora.Green("Success!!!"), aurora.Cyan(fmt.Sprint("created ", appName)))
-		fmt.Fprintf(out, "$ cd %s \n go run src/main.go")
+		fmt.Fprintf(out, "\n\n%s \n%s ", aurora.Green("Success!!!"), aurora.Cyan(fmt.Sprint("created ", appName, "  🎉 🎉\n\n")))
 		return nil
 	}
 }
