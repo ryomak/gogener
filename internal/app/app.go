@@ -1,4 +1,4 @@
-package cmd
+package app
 
 import (
 	"github.com/ryomak/go-app-cli/internal/recipe/data/ryomak"
