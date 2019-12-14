@@ -9,10 +9,12 @@ import (
 	"github.com/ryomak/go-app-cli/internal/templater"
 )
 
+// Recipe is template execute interface like chef
 type Recipe interface {
 	Do(*templater.AppTemplate) bool
 }
 
+// Params is setting sturct for template
 type Params struct {
 	CurrentDir string
 	AppName    string
@@ -24,6 +26,7 @@ type appRecipe struct {
 	params *Params
 }
 
+// New is creating Recipe
 func New(out io.Writer, params *Params) Recipe {
 	return &appRecipe{
 		out:    out,

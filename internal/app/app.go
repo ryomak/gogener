@@ -5,6 +5,7 @@ import (
 	"github.com/urfave/cli/v2"
 )
 
+// New is creating cli App
 func New(name, usage, version string) *cli.App {
 	app := cli.NewApp()
 	app.Name = name

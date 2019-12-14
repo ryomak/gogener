@@ -11,12 +11,14 @@ import (
 	"golang.org/x/tools/imports"
 )
 
+// AppTemplate is info for creating app
 type AppTemplate struct {
 	Name  string
 	Bg    string
 	Tmpls []*Templater
 }
 
+// Templater is stuct for executing template
 type Templater struct {
 	Tmpl string
 	Dir  string
@@ -28,6 +30,7 @@ var toFuncs = template.FuncMap{
 	"ToLowerCamel": strcase.ToLowerCamel,
 }
 
+// Create is creating file with template (using go fmt...)
 func (t *Templater) Create(curDir string, data interface{}) error {
 	dir := filepath.Join(curDir, t.Dir)
 	fullPath := filepath.Join(curDir, t.Dir, t.Name)

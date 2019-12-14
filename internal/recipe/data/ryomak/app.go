@@ -7,6 +7,7 @@ import (
 	"github.com/urfave/cli/v2"
 )
 
+// AppTmplFunc is getting template for app
 func AppTmplFunc(c *cli.Context) *templater.AppTemplate {
 	return &templater.AppTemplate{
 		Name: "ryomak-app",
