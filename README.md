@@ -5,7 +5,7 @@ go-cli is making project with template
 ## install
 
 ```
-$ GO111MODULE=on go get github.com/ryomak/go-cli
+$ go get -u github.com/ryomak/go-cli/cmd/go-cli
 ```
 
 ## usage
