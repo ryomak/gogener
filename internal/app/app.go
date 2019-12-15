@@ -1,6 +1,7 @@
 package app
 
 import (
+	"github.com/ryomak/go-app-cli/internal/recipe/data/exapp"
 	"github.com/ryomak/go-app-cli/internal/recipe/data/ryomak"
 	"github.com/urfave/cli/v2"
 )
@@ -37,6 +38,11 @@ func commands() []*cli.Command {
 					Name:   "ryomak-app",
 					Usage:  "create a ryomak-app template",
 					Action: createApp(ryomak.AppTmplFunc),
+				},
+				{
+					Name:   "ex-app",
+					Usage:  "create a ex-app template",
+					Action: createApp(exapp.AppTmplFunc),
 				},
 			},
 		},
