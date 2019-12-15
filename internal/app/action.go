@@ -28,7 +28,7 @@ func createApp(appTmplFunc func(c *cli.Context) *templater.AppTemplate) func(c *
 		if err != nil {
 			return err
 		}
-		appRecipe := recipe.New(out, &recipe.Params{
+		appRecipe := recipe.New(out, recipe.Params{
 			CurrentDir: d,
 			AppName:    appName,
 			ModName:    mod,
