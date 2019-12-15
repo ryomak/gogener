@@ -4,7 +4,7 @@
 [![GoDoc](https://godoc.org/github.com/ryomak/go-app-cli?status.svg)](https://godoc.org/github.com/ryomak/go-app-cli)
 [![GoReport](https://goreportcard.com/badge/github.com/ryomak/go-app-cli)](https://goreportcard.com/report/github.com/ryomak/go-app-cli)
 
-go-app-cli is making project with template
+go-app-cli is creating project with template
 
 
 ## install
@@ -36,6 +36,9 @@ OPTIONS:
 ```
 $ go-app-cli create  -app example -mod github.com/ryomak/example ryomak-app
 ```
+
+## how add project 
+https://ryomak.github.io/go-app-cli
 
 ## WIP
 - add test
