@@ -5,11 +5,11 @@ before:
   hooks:
     - go mod tidy
 builds:
-  - main: .
+  - main: ./cmd/gogener/main.go
     binary: gogener
     ldflags:
       - -s -w
-      - -X github.com/ryomak/gogener/cmd/main.Version={{.Version}}
+      - -X cmd/gogener/main.Version={{.Version}}
     env:
       - CGO_ENABLED=0
 archives:
