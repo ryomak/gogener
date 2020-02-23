@@ -9,7 +9,7 @@ builds:
     binary: gogener
     ldflags:
       - -s -w
-      - -X cmd/gogener/main.Version={{.Version}}
+      - -X main.Version={{.Version}}
     env:
       - CGO_ENABLED=0
 archives:
