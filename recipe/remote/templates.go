@@ -9,6 +9,7 @@ var remoteMap = map[string]string{
 	"ryomak/go-deep-util-example": "https://ryomak.github.io/gogener-templates/go-deep-util/app_template.yaml",
 	"ryomak/grpc-vue-go-example":  "https://ryomak.github.io/gogener-templates/grpc-vue-example/app_template.yaml",
 	"ryomak/go-p2pchat":           "https://ryomak.github.io/gogener-templates/go-p2pchat/app_template.yaml",
+	"ryomak/go-web-api":           "https://ryomak.github.io/gogener-templates/go-web-api/app_template.yaml",
 }
 
 type templates struct{}
