@@ -1,15 +1,40 @@
 package remote
 
 import (
+	"fmt"
+	"io/ioutil"
+	"net/http"
+	"os"
+
 	"github.com/ryomak/gogener/templater"
 	"github.com/urfave/cli/v2"
+	"gopkg.in/yaml.v2"
 )
 
-var remoteMap = map[string]string{
-	"ryomak/go-deep-util-example": "https://ryomak.github.io/gogener-templates/go-deep-util/app_template.yaml",
-	"ryomak/grpc-vue-go-example":  "https://ryomak.github.io/gogener-templates/grpc-vue-example/app_template.yaml",
-	"ryomak/go-p2pchat":           "https://ryomak.github.io/gogener-templates/go-p2pchat/app_template.yaml",
-	"ryomak/go-web-api":           "https://ryomak.github.io/gogener-templates/go-web-api/app_template.yaml",
+var remoteMap = map[string]string{}
+
+func init() {
+	url := os.Getenv("GOGENER_REMOTE_MAP_URL")
+	if url == "" {
+		url = "https://ryomak.github.io/gogener-templates/map.yaml"
+	}
+	resp, err := http.Get(url)
+	if err != nil {
+		fmt.Printf("Oops GOGENER_REMOTE_MAP_URL is invalid. detail: %s", err.Error())
+		os.Exit(1)
+	}
+	defer resp.Body.Close()
+	data, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		fmt.Printf("Oops cannot read body. detail: %s", err.Error())
+		os.Exit(1)
+	}
+	err = yaml.Unmarshal(data, &remoteMap)
+	if err != nil {
+		fmt.Printf("Oops cannot parse remote yaml. detail: %s", err.Error())
+		os.Exit(1)
+	}
+
 }
 
 type templates struct{}
